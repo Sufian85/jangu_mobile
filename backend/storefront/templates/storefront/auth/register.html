@@ -1,0 +1,17 @@
+{% extends "storefront/base.html" %}
+{% block title %}Create account — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="auth">
+  <div class="auth-card">
+    <h1>Create your account</h1>
+    <p class="auth-lead">It only takes a minute, and your orders stay in one place.</p>
+    <form method="post">
+      {% csrf_token %}
+      {% include "storefront/partials/form_fields.html" %}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button class="btn btn-primary btn-block" type="submit">Create account</button>
+    </form>
+    <p class="auth-switch">Already have an account? <a href="{% url 'storefront:login' %}?next={{ next|urlencode }}">Log in</a></p>
+  </div>
+</section>
+{% endblock %}

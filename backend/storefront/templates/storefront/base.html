@@ -1,0 +1,28 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12356E">
+  <title>{% block title %}Jangu Mobile — Your Gadget. Our Priority.{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'storefront/css/app.css' %}">
+</head>
+<body>
+  {% include "storefront/partials/header.html" %}
+  <main class="container">
+    {% if messages %}
+      <ul class="messages">
+        {% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+  {% include "storefront/partials/trust_badges.html" %}
+  {% include "storefront/partials/footer.html" %}
+  {% include "storefront/partials/bottom_nav.html" %}
+  <script src="{% static 'storefront/js/app.js' %}" defer></script>
+</body>
+</html>

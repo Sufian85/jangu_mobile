@@ -1,0 +1,14 @@
+{% extends "storefront/base.html" %}
+{% block title %}{{ category.name }} — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="section-head"><h2>{{ category.name }}</h2><span>{{ page_obj.paginator.count }} product{{ page_obj.paginator.count|pluralize }}</span></div>
+  {% include "storefront/partials/filter_bar.html" %}
+  {% if page_obj.object_list %}
+    <div class="product-grid">
+      {% for product in page_obj.object_list %}{% include "storefront/partials/product_card.html" %}{% endfor %}
+    </div>
+    {% include "storefront/partials/pagination.html" %}
+  {% else %}<p>No products match those filters.</p>{% endif %}
+</section>
+{% endblock %}

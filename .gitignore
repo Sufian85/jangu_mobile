@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Django
+*.log
+db.sqlite3
+media/
+# ...except the committed catalogue images that load_catalogue copies into media
+!backend/catalogue/fixtures/media/
+staticfiles/
+backups/
+.env
+.env.*
+!.env.example
+
+# Editors/OS
+.DS_Store
+.vscode/
+.idea/
+
+# Git worktrees
+.worktrees/
+
+# Flutter (future mobile/ app)
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+
+# Cypress E2E harness (e2e/)
+e2e/node_modules/
+e2e/cypress/screenshots/
+e2e/cypress/videos/
+e2e/cypress/downloads/
+e2e/cypress.env.json

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#EEF3FA"/>
+  <rect x="120" y="120" width="160" height="160" rx="14" fill="none" stroke="#12356E" stroke-width="6"/>
+  <path d="M150 250l35-45 30 35 25-30 30 40" fill="none" stroke="#EF7C1B" stroke-width="6" stroke-linecap="round"/>
+  <text x="200" y="330" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="20" fill="#12356E">Jangu Mobile</text>
+</svg>

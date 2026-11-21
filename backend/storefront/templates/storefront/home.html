@@ -1,0 +1,37 @@
+{% extends "storefront/base.html" %}
+{% load static storefront_extras %}
+
+{% block content %}
+<section class="hero">
+  <span class="tag">Shop Smart · Live Better</span>
+  <h1>Your Gadget. Our Priority.</h1>
+  <p>Latest smartphones, laptops, audio, wearables and gaming gear — genuine, best-priced, delivered fast.</p>
+  <a class="btn btn-primary" href="#featured">Start Shopping →</a>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Shop by Category</h2></div>
+  <div class="cat-grid">
+    {% for c in categories %}
+      <a class="cat-card" href="{% url 'storefront:category' c.slug %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#12356E" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="3"/><line x1="10" y1="19" x2="14" y2="19"/></svg>
+        <b>{{ c.name }}</b>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section featured" id="featured">
+  <div class="section-head">
+    <h2>Featured Products</h2>
+    <a href="{% url 'storefront:search' %}">View All</a>
+  </div>
+  {% if featured %}
+    <div class="product-grid">
+      {% for product in featured %}{% include "storefront/partials/product_card.html" %}{% endfor %}
+    </div>
+  {% else %}
+    <p>No products yet. Run <code>python manage.py load_catalogue</code>.</p>
+  {% endif %}
+</section>
+{% endblock %}

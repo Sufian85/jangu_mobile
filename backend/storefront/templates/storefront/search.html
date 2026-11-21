@@ -1,0 +1,14 @@
+{% extends "storefront/base.html" %}
+{% block title %}{% if query %}Search: {{ query }}{% else %}All Products{% endif %} — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="section-head"><h2>{% if query %}Results for “{{ query }}”{% else %}All Products{% endif %}</h2><span>{{ page_obj.paginator.count }} found</span></div>
+  {% include "storefront/partials/filter_bar.html" %}
+  {% if page_obj.object_list %}
+    <div class="product-grid">
+      {% for product in page_obj.object_list %}{% include "storefront/partials/product_card.html" %}{% endfor %}
+    </div>
+    {% include "storefront/partials/pagination.html" %}
+  {% elif query %}<p>Nothing matched “{{ query }}”.</p>{% else %}<p>No products match these filters.</p>{% endif %}
+</section>
+{% endblock %}

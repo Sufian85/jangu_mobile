@@ -1,0 +1,62 @@
+{% extends "storefront/base.html" %}
+{% load static storefront_extras %}
+{% block title %}{{ product.title }} — Jangu Mobile{% endblock %}
+{% block content %}
+<div class="pd">
+  <div class="gallery">
+    <div class="main">
+      {% with first=images|first %}
+      <img src="{% if first %}{{ first.image.url }}{% else %}{% static 'storefront/img/placeholder.svg' %}{% endif %}" alt="{{ product.title }}">
+      {% endwith %}
+    </div>
+    {% if images|length > 1 %}
+      <div class="thumbs">
+        {% for im in images %}<img src="{{ im.image.url }}" data-full="{{ im.image.url }}" alt="">{% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="buy">
+    <span class="brand">{{ product.brand }}</span>
+    <h1>{{ product.title }}</h1>
+    <div class="price">UGX <span data-variant-price>{{ product.min_price|ugx|cut:"UGX " }}</span></div>
+
+    <form method="post" action="{% url 'storefront:cart_add' %}">
+      {% csrf_token %}
+      {% if variants %}
+      <label for="variant">Option</label>
+      <select id="variant" name="variant_id" data-variant-select>
+        {% for v in variants %}
+          <option value="{{ v.id }}" data-price="{{ v.price|ugx|cut:'UGX ' }}" data-in-stock="{% if v.stock_qty > 0 %}1{% else %}0{% endif %}">
+            {{ v.attributes|variant_label }} — {{ v.price|ugx }}{% if v.stock_qty == 0 %} (Out of stock){% endif %}
+          </option>
+        {% endfor %}
+      </select>
+      {% else %}
+      <input type="hidden" name="variant_id" value="">
+      {% endif %}
+
+      <div class="qty" data-qty>
+        <button type="button" data-step="down">−</button>
+        <input type="number" name="quantity" value="1" min="1" aria-label="Quantity">
+        <button type="button" data-step="up">+</button>
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit" data-add-btn {% if not product.in_stock %}disabled{% endif %}>
+        Add to Cart
+      </button>
+    </form>
+
+    {% if product.description %}<h3 style="margin-top:20px">Details</h3><p>{{ product.description|linebreaks }}</p>{% endif %}
+  </div>
+</div>
+
+{% if related %}
+<section class="section">
+  <div class="section-head"><h2>You may also like</h2></div>
+  <div class="product-grid">
+    {% for product in related %}{% include "storefront/partials/product_card.html" %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" role="img" aria-label="Jangu Mobile">
+  <rect x="2" y="6" width="26" height="32" rx="5" fill="none" stroke="#12356E" stroke-width="3"/>
+  <path d="M9 30h13l3-11H10" fill="none" stroke="#EF7C1B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="34" r="2" fill="#EF7C1B"/><circle cx="21" cy="34" r="2" fill="#EF7C1B"/>
+  <text x="36" y="30" font-family="Poppins, Arial, sans-serif" font-size="24" font-weight="700">
+    <tspan fill="#12356E">Jan</tspan><tspan fill="#EF7C1B">gu</tspan>
+  </text>
+  <text x="37" y="40" font-family="Poppins, Arial, sans-serif" font-size="7" letter-spacing="2" fill="#12356E">MOBILE &amp; E-COMMERCE</text>
+</svg>

@@ -1,0 +1,13 @@
+{% load storefront_extras %}
+<table class="cart-table"><tbody>
+{% for item in order.items.all %}
+  <tr><td>{{ item.product_title }}<div class="muted">{{ item.variant_label }}</div></td>
+      <td>× {{ item.quantity }}</td><td>{{ item.line_total|ugx }}</td></tr>
+{% endfor %}
+</tbody></table>
+<div class="cart-summary">
+  <div>Total <b>{{ order.total|ugx }}</b></div>
+  <div>Paid via <b>{{ order.payment_method|default:"—" }}</b></div>
+  <div>Ref <b>{{ order.payment_reference|default:"—" }}</b></div>
+</div>
+<p style="margin-top:16px">Delivering to {{ order.recipient_name }}, {{ order.street_area }}, {{ order.city_district }}.</p>

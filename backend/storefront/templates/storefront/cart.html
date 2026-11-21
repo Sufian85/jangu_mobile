@@ -1,0 +1,58 @@
+{% extends "storefront/base.html" %}
+{% load static storefront_extras %}
+{% block title %}Your Cart — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section">
+  <h2>Your Cart</h2>
+  {% if lines %}
+  <table class="cart-table">
+    <tbody>
+    {% for line in lines %}
+      <tr>
+        <td>
+          {% with img=line.variant.product.images.all|first %}
+          <img class="cart-thumb" src="{% if img %}{{ img.image.url }}{% else %}{% static 'storefront/img/placeholder.svg' %}{% endif %}" alt="">
+          {% endwith %}
+        </td>
+        <td>
+          <a href="{% url 'storefront:product' line.variant.product.slug %}">{{ line.variant.product.title }}</a>
+          <div class="muted">{{ line.variant.attributes|variant_label }}</div>
+        </td>
+        <td>{{ line.unit_price|ugx }}</td>
+        <td>
+          <form method="post" action="{% url 'storefront:cart_update' %}">
+            {% csrf_token %}
+            <input type="hidden" name="variant_id" value="{{ line.variant.id }}">
+            <span class="qty" data-qty>
+              <button type="button" data-step="down">−</button>
+              <input type="number" name="quantity" value="{{ line.quantity }}" min="0" aria-label="Quantity">
+              <button type="button" data-step="up">+</button>
+            </span>
+            <button class="btn btn-navy" type="submit">Update</button>
+          </form>
+        </td>
+        <td>{{ line.line_total|ugx }}</td>
+        <td>
+          <form method="post" action="{% url 'storefront:cart_remove' %}">
+            {% csrf_token %}
+            <input type="hidden" name="variant_id" value="{{ line.variant.id }}">
+            <button class="btn" type="submit">Remove</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="cart-summary">
+    <div>Subtotal <b>{{ subtotal|ugx }}</b></div>
+    <div>Delivery <b>{{ 0|ugx }}</b></div>
+    <div>Total <b>{{ subtotal|ugx }}</b></div>
+    <a class="btn btn-primary btn-block" href="{% url 'storefront:checkout' %}">Proceed to Checkout</a>
+  </div>
+  {% else %}
+  <p>Your cart is empty.</p>
+  <a class="btn btn-primary" href="{% url 'storefront:home' %}">Start Shopping</a>
+  {% endif %}
+</section>
+{% endblock %}

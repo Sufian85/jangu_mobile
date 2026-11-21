@@ -1,0 +1,29 @@
+[Unit]
+Description=Jangu Mobile (gunicorn)
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=notify
+User=jangu
+Group=www-data
+WorkingDirectory=/srv/jangu/app/backend
+ExecStart=/srv/jangu/venv/bin/gunicorn backend.wsgi:application \
+    --bind unix:/run/jangu/gunicorn.sock \
+    --workers 2 \
+    --access-logfile - \
+    --error-logfile -
+ExecReload=/bin/kill -s HUP $MAINPID
+# A unix socket, so Jangu cannot clash with a port another site on this server uses.
+# Two workers because the server has under 1 GB of RAM, shared with those sites.
+RuntimeDirectory=jangu
+RuntimeDirectoryMode=0750
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,26 @@
+{% extends "storefront/base.html" %}
+{% block title %}Checkout — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section" style="max-width:640px;margin:0 auto">
+  <h2>Delivery address</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% if addresses %}
+    <div class="addr-list">
+      {% for a in addresses %}
+      <label>
+        <input type="radio" name="address_id" value="{{ a.id }}" {% if a.is_default %}checked{% endif %}>
+        {{ a.recipient_name }} — {{ a.recipient_phone }}<br>{{ a.street_area }}, {{ a.city_district }}
+        {% if a.landmark %} ({{ a.landmark }}){% endif %}
+      </label>
+      {% endfor %}
+    </div>
+    <p class="muted">…or add a new address below (leave the radios unselected):</p>
+    {% endif %}
+    {{ form.as_p }}
+    <h3 style="margin-top:20px">Order summary</h3>
+    {% include "storefront/partials/order_summary.html" %}
+    <button class="btn btn-primary btn-block" type="submit">Continue to Payment</button>
+  </form>
+</section>
+{% endblock %}

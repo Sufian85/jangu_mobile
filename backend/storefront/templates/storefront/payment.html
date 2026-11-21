@@ -1,0 +1,20 @@
+{% extends "storefront/base.html" %}
+{% load storefront_extras %}
+{% block title %}Payment — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section" style="max-width:560px;margin:0 auto">
+  <h2>Payment</h2>
+  <p>Deliver to: <b>{{ address.recipient_name }}</b>, {{ address.street_area }}, {{ address.city_district }}</p>
+  {% include "storefront/partials/order_summary.html" %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="pay-methods">
+      {% for value, label in methods.items %}
+      <label><input type="radio" name="method" value="{{ value }}" {% if forloop.first %}checked{% endif %}> {{ label }}</label>
+      {% endfor %}
+    </div>
+    <button class="btn btn-primary btn-block" type="submit">Pay {{ subtotal|ugx }}</button>
+  </form>
+  <p class="muted" style="margin-top:8px">Payment is simulated — no real charge is made.</p>
+</section>
+{% endblock %}

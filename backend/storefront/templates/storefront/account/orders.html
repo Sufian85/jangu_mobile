@@ -1,0 +1,24 @@
+{% extends "storefront/base.html" %}
+{% load storefront_extras %}
+{% block title %}My Orders — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section" style="max-width:720px;margin:0 auto">
+  <h2>My Orders</h2>
+  {% if page_obj.object_list %}
+    {% for order in page_obj.object_list %}
+    <div class="order-row">
+      <div>
+        <a href="{% url 'storefront:account_order' order.order_number %}">{{ order.order_number }}</a>
+        <div class="muted">{{ order.created_at|date:"j M Y" }} · {{ order.items.count }} item{{ order.items.count|pluralize }}</div>
+      </div>
+      <span class="status-badge">{{ order.get_status_display }}</span>
+      <b>{{ order.total|ugx }}</b>
+    </div>
+    {% endfor %}
+    {% include "storefront/partials/pagination.html" %}
+  {% else %}
+    <p>You have no orders yet.</p>
+    <a class="btn btn-primary" href="{% url 'storefront:home' %}">Start Shopping</a>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,6 @@
+<nav class="bottom-nav">
+  <a href="{% url 'storefront:home' %}" class="{% if active == 'home' %}active{% endif %}">🏠<span>Home</span></a>
+  <a href="{% url 'storefront:home' %}">🗂️<span>Categories</span></a>
+  <a href="{% url 'storefront:cart' %}" class="{% if active == 'cart' %}active{% endif %}">🛒<span>Cart</span></a>
+  <a href="{% if user.is_authenticated %}{% url 'storefront:account' %}{% else %}{% url 'storefront:login' %}{% endif %}" class="{% if active == 'account' %}active{% endif %}">👤<span>Account</span></a>
+</nav>

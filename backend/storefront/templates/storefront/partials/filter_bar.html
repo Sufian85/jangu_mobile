@@ -1,0 +1,20 @@
+<form class="filter-bar" method="get">
+  {% if request.GET.q %}<input type="hidden" name="q" value="{{ request.GET.q }}">{% endif %}
+  <label>Brand
+    <select name="brand">
+      <option value="">All</option>
+      {% for b in brands %}<option value="{{ b }}" {% if b|lower == request.GET.brand|lower %}selected{% endif %}>{{ b }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Min price<input type="number" name="price_min" value="{{ request.GET.price_min }}" min="0"></label>
+  <label>Max price<input type="number" name="price_max" value="{{ request.GET.price_max }}" min="0"></label>
+  <label>In stock<input type="checkbox" name="in_stock" value="1" {% if request.GET.in_stock %}checked{% endif %}></label>
+  <label>Sort
+    <select name="sort">
+      <option value="newest" {% if request.GET.sort == "newest" %}selected{% endif %}>Newest</option>
+      <option value="price_asc" {% if request.GET.sort == "price_asc" %}selected{% endif %}>Price ↑</option>
+      <option value="price_desc" {% if request.GET.sort == "price_desc" %}selected{% endif %}>Price ↓</option>
+    </select>
+  </label>
+  <button class="btn btn-navy" type="submit">Apply</button>
+</form>

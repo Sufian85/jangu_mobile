@@ -1,0 +1,22 @@
+{% extends "storefront/base.html" %}
+{% block title %}Delivery Addresses — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section" style="max-width:640px;margin:0 auto">
+  <div class="section-head"><h2>Delivery Addresses</h2><a href="{% url 'storefront:address_add' %}">+ Add address</a></div>
+  {% for a in addresses %}
+  <div class="addr-card">
+    <b>{{ a.recipient_name }}</b>{% if a.is_default %}<span class="badge">Default</span>{% endif %}
+    <div class="muted">{{ a.recipient_phone }} · {{ a.street_area }}, {{ a.city_district }}{% if a.landmark %} ({{ a.landmark }}){% endif %}</div>
+    <div class="row">
+      <a class="btn" href="{% url 'storefront:address_edit' a.pk %}">Edit</a>
+      {% if not a.is_default %}
+      <form method="post" action="{% url 'storefront:address_set_default' a.pk %}">{% csrf_token %}<button class="btn" type="submit">Make default</button></form>
+      {% endif %}
+      <form method="post" action="{% url 'storefront:address_delete' a.pk %}">{% csrf_token %}<button class="btn" type="submit">Delete</button></form>
+    </div>
+  </div>
+  {% empty %}
+  <p>You have no saved addresses.</p>
+  {% endfor %}
+</section>
+{% endblock %}

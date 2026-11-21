@@ -1,0 +1,13 @@
+{
+  "name": "jangu-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cypress end-to-end harness for the Jangu storefront",
+  "scripts": {
+    "e2e": "cypress run",
+    "e2e:open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.4"
+  }
+}

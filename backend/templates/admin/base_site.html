@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ subtitle }}{% if subtitle %} | {% endif %}{{ title }} | Jangu Mobile{% endblock %}
+
+{% block branding %}
+<div id="site-name">
+  <a href="{% url 'admin:index' %}" style="color:#EF7C1B;font-weight:700;letter-spacing:.5px;">
+    Jangu&nbsp;Mobile
+  </a>
+</div>
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}
+<style>
+  :root {
+    --primary: #12356E; --secondary: #12356E; --accent: #EF7C1B;
+    --header-bg: #12356E; --header-color: #ffffff; --header-branding-color: #EF7C1B;
+    --header-link-color: #ffffff;
+    --link-fg: #12356E; --link-hover-color: #EF7C1B; --link-selected-fg: #0d2a58;
+    --button-bg: #EF7C1B; --button-hover-bg: #d96f14; --button-fg: #ffffff;
+    --default-button-bg: #12356E; --default-button-hover-bg: #0d2a58;
+    --object-tools-bg: #12356E; --object-tools-hover-bg: #EF7C1B;
+    --breadcrumbs-bg: #0d2a58; --breadcrumbs-link-fg: #ffffff; --breadcrumbs-fg: #cdd7e6;
+  }
+</style>
+{% endblock %}

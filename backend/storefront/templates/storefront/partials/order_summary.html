@@ -1,0 +1,17 @@
+{% load storefront_extras %}
+<table class="cart-table">
+  <tbody>
+  {% for line in lines %}
+    <tr>
+      <td>{{ line.variant.product.title }}<div class="muted">{{ line.variant.attributes|variant_label }}</div></td>
+      <td>× {{ line.quantity }}</td>
+      <td>{{ line.line_total|ugx }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div class="cart-summary">
+  <div>Subtotal <b>{{ subtotal|ugx }}</b></div>
+  <div>Delivery <b>{{ 0|ugx }}</b></div>
+  <div>Total <b>{{ subtotal|ugx }}</b></div>
+</div>

@@ -1,0 +1,15 @@
+{% extends "storefront/base.html" %}
+{% block title %}My Account — Jangu Mobile{% endblock %}
+{% block content %}
+<section class="section" style="max-width:640px;margin:0 auto">
+  <h2>Hi {{ user.first_name|default:user.phone }}</h2>
+  <p class="muted">{{ user.phone }}</p>
+  <div class="account-tiles">
+    <a class="account-tile" href="{% url 'storefront:account_orders' %}"><b>My Orders</b><span>Track and manage your orders</span></a>
+    <a class="account-tile" href="{% url 'storefront:addresses' %}"><b>Delivery Addresses</b><span>Manage where your orders go</span></a>
+  </div>
+  <form method="post" action="{% url 'storefront:logout' %}" style="margin-top:16px">
+    {% csrf_token %}<button class="btn" type="submit">Log out</button>
+  </form>
+</section>
+{% endblock %}

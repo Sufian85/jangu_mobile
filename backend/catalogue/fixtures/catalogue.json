@@ -1,0 +1,593 @@
+[
+{
+  "model": "catalogue.category",
+  "fields": {
+    "name": "Smartphones",
+    "slug": "smartphones",
+    "parent": null,
+    "image": ""
+  }
+},
+{
+  "model": "catalogue.category",
+  "fields": {
+    "name": "Laptops & Accessories",
+    "slug": "laptops-accessories",
+    "parent": null,
+    "image": ""
+  }
+},
+{
+  "model": "catalogue.category",
+  "fields": {
+    "name": "Audio & Wearables",
+    "slug": "audio-wearables",
+    "parent": null,
+    "image": ""
+  }
+},
+{
+  "model": "catalogue.category",
+  "fields": {
+    "name": "Gaming Gear",
+    "slug": "gaming-gear",
+    "parent": null,
+    "image": ""
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "PlayStation 4 Slim 500GB Gold Edition",
+    "slug": "playstation-4-slim-500gb-gold-edition",
+    "category": [
+      "gaming-gear"
+    ],
+    "description": "The slimmer, quieter PS4 in a limited-edition gold finish, with a matching gold DualShock 4 controller in the box. 500GB of storage, HDR support, Wi-Fi and Bluetooth, and access to thousands of PS4 games plus streaming apps such as Netflix and YouTube.",
+    "brand": "Sony",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.339Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Xbox Wireless Controller",
+    "slug": "xbox-wireless-controller",
+    "category": [
+      "gaming-gear"
+    ],
+    "description": "The standard Xbox controller, compatible with Xbox Series X|S, Xbox One, Windows PCs, Android and iOS. Textured grip on the triggers and bumpers, a hybrid D-pad, a Share button for screenshots and clips, a 3.5mm headset jack, and Bluetooth for wireless play on PC and phone. Runs on two AA batteries for up to 40 hours.",
+    "brand": "Microsoft",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.372Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Sony DualSense Wireless Controller",
+    "slug": "sony-dualsense-wireless-controller",
+    "category": [
+      "gaming-gear"
+    ],
+    "description": "The PlayStation 5 controller, with haptic feedback and adaptive triggers that react to what happens in the game. Built-in microphone, 3.5mm headset jack, motion sensors, Create button and a rechargeable battery that charges over USB-C. Also works with PC over USB or Bluetooth.",
+    "brand": "Sony",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.385Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Apple Watch Series 6",
+    "slug": "apple-watch-series-6",
+    "category": [
+      "audio-wearables"
+    ],
+    "description": "Measures blood oxygen and takes an ECG from your wrist, alongside heart-rate alerts, sleep tracking and fall detection. Always-On Retina display, S6 chip, built-in GPS and water resistance to 50m for swimming. Up to 18 hours of battery life. Requires an iPhone.",
+    "brand": "Apple",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.424Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "JBL Flip 6",
+    "slug": "jbl-flip-6",
+    "category": [
+      "audio-wearables"
+    ],
+    "description": "Portable Bluetooth speaker with JBL Pro Sound from a two-way system (racetrack woofer plus a separate tweeter) for deep bass and clear highs. IP67 waterproof and dustproof, up to 12 hours of playtime, USB-C charging, and PartyBoost to pair it with other compatible JBL speakers.",
+    "brand": "JBL",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.441Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Logitech M220 Silent Wireless Mouse",
+    "slug": "logitech-m220-silent-wireless-mouse",
+    "category": [
+      "laptops-accessories"
+    ],
+    "description": "A compact wireless mouse with silent clicks: over 90% less click noise than a standard Logitech mouse. Plug-and-play USB nano receiver with a 10m range, an ambidextrous shape, and up to 18 months of battery life on a single AA battery.",
+    "brand": "Logitech",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.455Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Lenovo ThinkBook 16 Gen 7",
+    "slug": "lenovo-thinkbook-16-gen-7",
+    "category": [
+      "laptops-accessories"
+    ],
+    "description": "A 16-inch business laptop with a WUXGA (1920 x 1200) anti-glare display, Intel Core Ultra 5 processor, 16GB of DDR5 RAM and a 512GB SSD. Aluminium build, backlit keyboard with number pad, fingerprint reader in the power button, Wi-Fi 6E, and HDMI, USB-A and USB-C ports. Windows 11 Pro.",
+    "brand": "Lenovo",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.469Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Surface Laptop 7th Edition",
+    "slug": "surface-laptop-7th-edition",
+    "category": [
+      "laptops-accessories"
+    ],
+    "description": "A Copilot+ PC with a 13.8-inch PixelSense Flow touchscreen (up to 120Hz), a Snapdragon X Plus processor with a built-in NPU for on-device AI, 16GB of RAM and a 512GB SSD. Up to 20 hours of video playback, two USB4 (USB-C) ports plus USB-A, a backlit keyboard and a large haptic touchpad. Windows 11 Home.",
+    "brand": "Microsoft",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.483Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "MacBook Air 13-inch M1",
+    "slug": "macbook-air-13-inch-m1",
+    "category": [
+      "laptops-accessories"
+    ],
+    "description": "Apple's thin, fanless MacBook Air with the M1 chip (8-core CPU, 7-core GPU), so it stays silent under any load. 13.3-inch Retina display with True Tone, Magic Keyboard with Touch ID, two Thunderbolt / USB 4 ports and up to 18 hours of battery life, in a 1.29kg body.",
+    "brand": "Apple",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.535Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Samsung Galaxy S25 FE",
+    "slug": "samsung-galaxy-s25-fe",
+    "category": [
+      "smartphones"
+    ],
+    "description": "A big-screen Galaxy with flagship features: a 6.7-inch Dynamic AMOLED 2X display at 120Hz, Exynos 2400 processor and 8GB of RAM. Triple rear camera (50MP main, 12MP ultra-wide, 8MP 3x telephoto) and a 12MP selfie camera. 4,900mAh battery with 45W fast charging, IP68 water and dust resistance, Galaxy AI, and 7 years of OS and security updates.",
+    "brand": "Samsung",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.577Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "Samsung Galaxy S25",
+    "slug": "samsung-galaxy-s25",
+    "category": [
+      "smartphones"
+    ],
+    "description": "Samsung's compact flagship: a 6.2-inch Dynamic AMOLED 2X display at up to 120Hz, the Snapdragon 8 Elite for Galaxy processor and 12GB of RAM. Triple rear camera (50MP main, 12MP ultra-wide, 10MP 3x telephoto) that records up to 8K video, with Galaxy AI tools such as Circle to Search and Live Translate built in. 4,000mAh battery with fast wired and wireless charging, IP68 rating, and 7 years of OS and security updates.",
+    "brand": "Samsung",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.620Z"
+  }
+},
+{
+  "model": "catalogue.product",
+  "fields": {
+    "title": "iPhone 17 Pro",
+    "slug": "iphone-17-pro",
+    "category": [
+      "smartphones"
+    ],
+    "description": "A 6.3-inch Super Retina XDR display with ProMotion up to 120Hz and Always-On, powered by the A19 Pro chip in an aluminium unibody design. The Pro Fusion camera system has three 48MP cameras (Main, Ultra Wide and Telephoto with up to 8x optical-quality zoom) plus an 18MP Center Stage front camera. Ceramic Shield 2, Face ID and USB-C.",
+    "brand": "Apple",
+    "is_active": true,
+    "created_at": "2026-10-25T04:58:51.774Z"
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "playstation-4-slim-500gb-gold-edition"
+    ],
+    "sku": "playstation-4-slim-500gb-gold-edition-500-gold",
+    "attributes": {
+      "storage": "500GB",
+      "color": "Gold"
+    },
+    "price": "1250000.00",
+    "stock_qty": 3
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "xbox-wireless-controller"
+    ],
+    "sku": "xbox-wireless-controller-carbon-black",
+    "attributes": {
+      "color": "Carbon Black"
+    },
+    "price": "260000.00",
+    "stock_qty": 18
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "sony-dualsense-wireless-controller"
+    ],
+    "sku": "sony-dualsense-wireless-controller-white",
+    "attributes": {
+      "color": "White"
+    },
+    "price": "320000.00",
+    "stock_qty": 20
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "apple-watch-series-6"
+    ],
+    "sku": "apple-watch-series-6-40-gps",
+    "attributes": {
+      "size": "40mm",
+      "connectivity": "GPS",
+      "color": "Blue"
+    },
+    "price": "850000.00",
+    "stock_qty": 3
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "apple-watch-series-6"
+    ],
+    "sku": "apple-watch-series-6-44-gps",
+    "attributes": {
+      "size": "44mm",
+      "connectivity": "GPS",
+      "color": "Blue"
+    },
+    "price": "950000.00",
+    "stock_qty": 4
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "jbl-flip-6"
+    ],
+    "sku": "jbl-flip-6-red",
+    "attributes": {
+      "color": "Red"
+    },
+    "price": "480000.00",
+    "stock_qty": 15
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "logitech-m220-silent-wireless-mouse"
+    ],
+    "sku": "logitech-m220-silent-wireless-mouse-charcoal",
+    "attributes": {
+      "color": "Charcoal"
+    },
+    "price": "55000.00",
+    "stock_qty": 40
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "lenovo-thinkbook-16-gen-7"
+    ],
+    "sku": "lenovo-thinkbook-16-gen-7-u5-16-512",
+    "attributes": {
+      "processor": "Intel Core Ultra 5",
+      "ram": "16GB",
+      "storage": "512GB",
+      "color": "Arctic Grey"
+    },
+    "price": "3150000.00",
+    "stock_qty": 5
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "surface-laptop-7th-edition"
+    ],
+    "sku": "surface-laptop-7th-edition-xplus-16-512",
+    "attributes": {
+      "processor": "Snapdragon X Plus",
+      "ram": "16GB",
+      "storage": "512GB",
+      "color": "Platinum"
+    },
+    "price": "4750000.00",
+    "stock_qty": 3
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "macbook-air-13-inch-m1"
+    ],
+    "sku": "macbook-air-13-inch-m1-8-256-gold",
+    "attributes": {
+      "ram": "8GB",
+      "storage": "256GB",
+      "color": "Gold"
+    },
+    "price": "3300000.00",
+    "stock_qty": 4
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "samsung-galaxy-s25-fe"
+    ],
+    "sku": "samsung-galaxy-s25-fe-128-navy",
+    "attributes": {
+      "storage": "128GB",
+      "color": "Navy"
+    },
+    "price": "2350000.00",
+    "stock_qty": 10
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "samsung-galaxy-s25-fe"
+    ],
+    "sku": "samsung-galaxy-s25-fe-256-navy",
+    "attributes": {
+      "storage": "256GB",
+      "color": "Navy"
+    },
+    "price": "2600000.00",
+    "stock_qty": 6
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "samsung-galaxy-s25"
+    ],
+    "sku": "samsung-galaxy-s25-128-mint",
+    "attributes": {
+      "storage": "128GB",
+      "color": "Mint"
+    },
+    "price": "3050000.00",
+    "stock_qty": 8
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "samsung-galaxy-s25"
+    ],
+    "sku": "samsung-galaxy-s25-256-mint",
+    "attributes": {
+      "storage": "256GB",
+      "color": "Mint"
+    },
+    "price": "3350000.00",
+    "stock_qty": 5
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "iphone-17-pro"
+    ],
+    "sku": "iphone-17-pro-256-orange",
+    "attributes": {
+      "storage": "256GB",
+      "color": "Cosmic Orange"
+    },
+    "price": "5450000.00",
+    "stock_qty": 6
+  }
+},
+{
+  "model": "catalogue.productvariant",
+  "fields": {
+    "product": [
+      "iphone-17-pro"
+    ],
+    "sku": "iphone-17-pro-512-orange",
+    "attributes": {
+      "storage": "512GB",
+      "color": "Cosmic Orange"
+    },
+    "price": "6350000.00",
+    "stock_qty": 3
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 1,
+  "fields": {
+    "product": [
+      "playstation-4-slim-500gb-gold-edition"
+    ],
+    "image": "products/playstation-4-slim-500gb-gold-edition.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 2,
+  "fields": {
+    "product": [
+      "xbox-wireless-controller"
+    ],
+    "image": "products/xbox-wireless-controller.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 3,
+  "fields": {
+    "product": [
+      "sony-dualsense-wireless-controller"
+    ],
+    "image": "products/sony-dualsense-wireless-controller.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 4,
+  "fields": {
+    "product": [
+      "apple-watch-series-6"
+    ],
+    "image": "products/apple-watch-series-6.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 5,
+  "fields": {
+    "product": [
+      "jbl-flip-6"
+    ],
+    "image": "products/jbl-flip-6.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 6,
+  "fields": {
+    "product": [
+      "logitech-m220-silent-wireless-mouse"
+    ],
+    "image": "products/logitech-m220-silent-wireless-mouse.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 7,
+  "fields": {
+    "product": [
+      "lenovo-thinkbook-16-gen-7"
+    ],
+    "image": "products/lenovo-thinkbook-16-gen-7.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 8,
+  "fields": {
+    "product": [
+      "surface-laptop-7th-edition"
+    ],
+    "image": "products/surface-laptop-7th-edition.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 9,
+  "fields": {
+    "product": [
+      "macbook-air-13-inch-m1"
+    ],
+    "image": "products/macbook-air-13-inch-m1.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 10,
+  "fields": {
+    "product": [
+      "samsung-galaxy-s25-fe"
+    ],
+    "image": "products/samsung-galaxy-s25-fe.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 11,
+  "fields": {
+    "product": [
+      "samsung-galaxy-s25"
+    ],
+    "image": "products/samsung-galaxy-s25.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+},
+{
+  "model": "catalogue.productimage",
+  "pk": 12,
+  "fields": {
+    "product": [
+      "iphone-17-pro"
+    ],
+    "image": "products/iphone-17-pro.jpg",
+    "is_primary": true,
+    "sort_order": 0
+  }
+}
+]

@@ -1,0 +1,14 @@
+{% load static storefront_extras %}
+<a class="product-card" href="{% url 'storefront:product' product.slug %}">
+  <div class="thumb">
+    {% with img=product.images.all|first %}
+      <img src="{% if img %}{{ img.image.url }}{% else %}{% static 'storefront/img/placeholder.svg' %}{% endif %}" alt="{{ product.title }}" loading="lazy">
+    {% endwith %}
+  </div>
+  <div class="body">
+    <span class="brand">{{ product.brand }}</span>
+    <span class="title">{{ product.title }}</span>
+    {% if not product.in_stock %}<span class="oos">Out of stock</span>{% endif %}
+    <span class="price">from {{ product.min_price|ugx }}</span>
+  </div>
+</a>
